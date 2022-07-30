@@ -21,6 +21,12 @@ app.use(express.json());
 //Cors settings
 app.use(cors(corsOptionsDelegate));
 
+const swaggerUi = require('swagger-ui-express'),
+  swaggerDocument = require('./swagger.json');
+
+//Swagger Documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // Static Files
 var public = path.join(__dirname, '../public');
 
