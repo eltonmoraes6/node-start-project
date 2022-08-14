@@ -28,14 +28,13 @@ const swaggerUi = require('swagger-ui-express'),
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Static Files
-var public = path.join(__dirname, '../public');
+app.use(express.static(path.join(__dirname, '../build')));
 
 //Routes
 app.use(require('./routes'));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(public, 'index.html'));
+  res.sendFile('index.html');
 });
-app.use('/', express.static(public));
 
 //Error
 app.use((req, res, next) => {

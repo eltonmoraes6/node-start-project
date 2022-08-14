@@ -186,7 +186,7 @@
         }
       }
     },
-    "/users": {
+    "/users/login": {
       "post": {
         "summary": "Sign In",
         "description": "Login",

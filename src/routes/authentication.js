@@ -11,7 +11,7 @@ const { ensureAuthorized } = require('../middleware/auth');
 // @route    POST api/v1/user
 // @desc     POST create user
 // @access   Public
-router.post('/', login);
+router.post('/login', login);
 
 // @route    POST api/v1/user
 // @desc     POST create user
